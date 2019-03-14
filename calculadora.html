@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="container">
+        <form name="formulario"><br>
+
+
+            <div class="row">
+
+                <div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
+                </div>
+
+                <div class="col-xs-8 col-sm-8 col-md-6 col-lg-4 p-5">
+                    <center>
+
+                        <input type="text" style="background-color:gray" name="texto1">
+                        <br>
+                        <input type="text" style="background-color:gray" name="texto2" value="0">
+                        <br>
+                        <br>
+
+                        <br>
+                        <div class="row">
+                            <div class="col p-0">
+                                <button type="button" value="CE" onclick='document.formulario.texto2.value = "0"' class="btn-lg btn-danger btn-block ">CE</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="CE" onclick="reset()" class="btn-lg btn-danger btn-block ">C</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="CE" onclick="borraruno()" class="btn-lg btn-danger btn-block ">&larr;</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="/" onclick="operador('/')" class="btn-lg btn-primary btn-block ">/</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="7" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="8" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" onclick="escribir(this.value)" value="9" class="btn-lg btn-dark btn-block ">9</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="-" onclick="operador('*')" class="btn-lg btn-primary btn-block ">*</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="4" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="5" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" onclick="escribir(this.value)" value="6" class="btn-lg btn-dark btn-block ">6</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="*" onclick="operador('-')" class="btn-lg btn-primary btn-block ">-</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="1" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="2" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" onclick="escribir(this.value)" value="3" class="btn-lg btn-dark btn-block ">3</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="/" onclick="operador('+')" class="btn-lg btn-primary btn-block ">+</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col p-0">
+                                <button type="button" onclick="menos()" value="." class="btn-lg btn-dark btn-block ">&plusmn;</button>
+                            </div>
+                            <div class="col p-0">
+                                <input type="button" onclick="escribir(this.value)" value="0" class="btn-lg btn-dark btn-block"></button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" onclick="coma()" value="." class="btn-lg btn-dark btn-block ">.</button>
+                            </div>
+                            <div class="col p-0">
+                                <button type="button" value="/" onclick="calcular()" class="btn-lg btn-success btn-block ">=</button>
+                            </div>
+                        </div>
+                    </center>
+
+
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
+                </div>
+
+                <br>
+
+
+        </form>
+    </div>
+    <script src=calculadora.js>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
